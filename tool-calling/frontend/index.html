@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>VK-GPT</title>
+    <style>
+        #chat-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        #chat-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Loading animation */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-900 text-white overflow-x-hidden">
+    <!-- VK-GPT Branding -->
+    <div class="fixed top-0 left-0 p-4 z-50">
+        <h1 class="text-2xl font-bold text-white">VK-GPT</h1>
+    </div>
+
+    <div class="container mx-auto max-w-3xl pb-44 px-2 mt-20 h-screen overflow-y-auto" id="chat-container">
+        <!-- Messages goes here -->
+    </div>
+
+    <!-- Bottom text area here -->
+    <div class="fixed inset-x-0 bottom-0 flex items-center justify-center bg-neutral-900">
+        <div class="bg-neutral-800 p-2 rounded-3xl w-full max-w-3xl mb-5">
+            <textarea class="w-full resize-none outline-0 p-3" id="input" rows="2"
+                placeholder="Ask me anything..."></textarea>
+            <div class="flex items-center justify-end">
+                <button id="ask"
+                    class="bg-white px-4 py-1 rounded-full cursor-pointer hover:bg-gray-300 text-black font-medium">Ask</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
