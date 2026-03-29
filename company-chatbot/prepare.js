@@ -18,7 +18,7 @@ const pinecone = new PineconeClient({ apiKey: process.env.PINECONE_API_KEY });
 
 const pineconeIndex = pinecone.Index("company-chatbot-index");
 
-const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
+export const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
     pineconeIndex,
     maxConcurrency: 5,
 });
